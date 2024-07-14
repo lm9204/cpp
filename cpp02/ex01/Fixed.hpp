@@ -8,9 +8,9 @@ class Fixed
 		Fixed(const int n);
 		Fixed(const float floatN);
 		~Fixed();
-		Fixed(const Fixed &ref);
-		Fixed &operator=(const Fixed &ref);
-		friend std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
+		Fixed(const Fixed& ref);
+		Fixed& operator=(const Fixed& ref);
+		friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 		int		getRawBits(void) const;
 		int		toInt(void) const;

@@ -1,18 +1,21 @@
 #include <iostream>
-#include "Fixed.hpp"
+#include "Point.hpp"
+
+bool	bsp(Point const a, Point const b, Point const c, Point const point);
+Fixed   vsign(Point const a, Point const b, Point const c);
 
 int main( void )
 {
-	Fixed 		a;
-	Fixed const	b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Point p1(2, 2);
+	Point p2(1, 4);
+	Point p3(2.2, 2.2);
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
 
-	return 0;
+	Point a(1, 3);
+	Point b(3, 3);
+	Point c(2, 1);
+
+	std::cout << "p1: " << bsp(a, b, c, p1) << std::endl;
+	std::cout << "p2: " << bsp(a, b, c, p2) << std::endl;
+	std::cout << "p3: " << bsp(a, b, c, p3) << std::endl;
 }

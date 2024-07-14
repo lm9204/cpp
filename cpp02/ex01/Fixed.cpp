@@ -22,15 +22,15 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed &ref)
+Fixed::Fixed(const Fixed& ref)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = ref;
 }
 
-Fixed	&Fixed::operator=(const Fixed &ref)
+Fixed&	Fixed::operator=(const Fixed& ref)
 {
-	if (this == &ref)
+	if (this ==& ref)
 		return *this;
 
 	std::cout << "Copy assignment operator called" << std::endl;
@@ -60,7 +60,7 @@ float	Fixed::toFloat(void) const
 	return static_cast<float>(_fixedN) / (1 << _fract_bits);
 }
 
-std::ostream &operator<<(std::ostream &os, const Fixed &fixed) {
+std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
 	os << fixed.toFloat();
 	return os;
 }
