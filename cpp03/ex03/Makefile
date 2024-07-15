@@ -1,8 +1,12 @@
 CC = c++
-FLAGS = -Wall -Wextra -Werror -MMD -MP -g3 -std=c++98
-SRCS = 	
+FLAGS = -Wall -Wextra -Werror -MMD -MP -Wshadow -g3 -std=c++98
+SRCS = 	ClapTrap.cpp \
+		ScavTrap.cpp \
+		FragTrap.cpp \
+		DiamondTrap.cpp \
+		main.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = 
+NAME = ex03
 
 all : $(NAME)
 
