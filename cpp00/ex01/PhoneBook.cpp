@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yeondcho <yeondcho@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 21:51:10 by yeondcho          #+#    #+#             */
-/*   Updated: 2024/07/26 13:29:27 by yeondcho         ###   ########.fr       */
+/*   Updated: 2024/07/26 05:14:14 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,14 +103,14 @@ void	PhoneBook::search() const
 		{
 			std::cout << "Wrong Index" << std::endl;
 			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cin.ignore(std::numeric_limits<std::streamsize>::std::max(), '\n');
 		}
 		else if (0 < index && index <= this->_index)
 			break;
 		else
 		{
 			std::cout << "Wrong Index" << std::endl;
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cin.ignore(std::numeric_limits<std::streamsize>::std::max(), '\n');
 		}
 	}
 	std::string field[5] = {"FirstName", "LastName", "NickName", "PhoneNumber", "Secret"};
@@ -121,5 +121,5 @@ void	PhoneBook::search() const
 		<<  field[i] << " : "
 		<< this->_contacts[index - 1].getInfo(InfoType(i))
 		<< std::endl;
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	std::cin.ignore(std::numeric_limits<std::streamsize>::std::max(), '\n');
 }
