@@ -6,7 +6,7 @@
 /*   By: yeondcho <yeondcho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 21:51:24 by yeondcho          #+#    #+#             */
-/*   Updated: 2024/07/11 13:23:31 by yeondcho         ###   ########.fr       */
+/*   Updated: 2024/07/26 13:25:12 by yeondcho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ class PhoneBook
 	public:
 		PhoneBook();
 		~PhoneBook();
-		void	add();
-		void	display() const;
-		void	search() const;
+		std::string	print_inline(std::string str) const;
+		void		display() const;
+		void		search() const;
+		int			add();
 };
 
 #endif

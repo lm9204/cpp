@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: yeondcho <yeondcho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 12:30:37 by yeondcho          #+#    #+#             */
-/*   Updated: 2024/07/25 12:05:02 by codespace        ###   ########.fr       */
+/*   Updated: 2024/07/25 22:37:17 by yeondcho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int main(void)
 
 	while (1)
 	{
-		std::cout << "PhoneBook> ";
+		std::cout << "PhoneBook> " << std::flush;
 		std::getline(std::cin, cmd);
 		if (std::cin.eof())
 			break;
-		if (cmd.compare("ADD") == 0)
-			book.add();
+		if (cmd.compare("ADD") == 0 && !book.add())
+			break;
 		else if (cmd.compare("SEARCH") == 0)
 		{
 			book.display();
