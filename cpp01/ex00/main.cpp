@@ -8,4 +8,5 @@ int main()
     Zombie* zombie = newZombie("yeondcho");
     zombie->announce();
     delete zombie;
+    randomChump("somebody");
 }
