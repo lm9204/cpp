@@ -20,7 +20,6 @@ $(NAME) : $(OBJS)
 clean :
 	rm -rf $(OBJS)
 	rm -rf $(SRCS:.cpp=.d)
-	rm -rf $(NAME)
 
 fclean : clean
 	rm -rf $(NAME)
