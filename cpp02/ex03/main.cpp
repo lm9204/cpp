@@ -15,7 +15,7 @@ int main( void )
 	Point b(3, 3);
 	Point c(2, 1);
 
-	std::cout << "p1: " << bsp(a, b, c, p1) << std::endl;
-	std::cout << "p2: " << bsp(a, b, c, p2) << std::endl;
-	std::cout << "p3: " << bsp(a, b, c, p3) << std::endl;
+	std::cout << "p1: " << (bsp(a, b, c, p1) ? "true" : "false") << std::endl;
+	std::cout << "p2: " << (bsp(a, b, c, p2) ? "true" : "false") << std::endl;
+	std::cout << "p3: " << (bsp(a, b, c, p3) ? "true" : "false") << std::endl;
 }
