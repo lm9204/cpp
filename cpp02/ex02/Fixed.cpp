@@ -165,20 +165,20 @@ float	Fixed::toFloat(void) const
 
 const Fixed& Fixed::min(const Fixed& r1, const Fixed& r2)
 {
-	return (r1 < r2 ? r1 : r2);
+	return (r1.getRawBits() < r2.getRawBits() ? r1 : r2);
 }
 
 Fixed& Fixed::min(Fixed& r1,  Fixed& r2)
 {
-	return (r1 < r2 ? r1 : r2);
+	return (r1.getRawBits() < r2.getRawBits() ? r1 : r2);
 }
 
 const Fixed& Fixed::max(const Fixed& r1, const Fixed& r2)
 {
-	return (r1 > r2 ? r1 : r2);
+	return (r1.getRawBits() > r2.getRawBits() ? r1 : r2);
 }
 
 Fixed& Fixed::max(Fixed& r1, Fixed& r2)
 {
-	return (r1 > r2 ? r1 : r2);
+	return (r1.getRawBits() > r2.getRawBits() ? r1 : r2);
 }
