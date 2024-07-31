@@ -85,8 +85,3 @@ void    ClapTrap::beRepaired(unsigned int amount)
     this->_energy--;
     this->_hit += amount;
 }
-
-void    ClapTrap::setDamage(unsigned int amount)
-{
-    this->_damage = amount;
-}

@@ -8,7 +8,6 @@ ClapTrap::ClapTrap() : _name("ClapTrap"), _hit(10), _energy(10), _damage(0)
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hit(10), _energy(10), _damage(0)
 {
-
     std::cout << "Constructor is called" << std::endl;
 }
 
@@ -36,9 +35,9 @@ ClapTrap&    ClapTrap::operator=(const ClapTrap& ref)
 
 void    ClapTrap::attack(const std::string& target)
 {
-    if (this->_hit == 0 && this->_energy != 0)
+    if (this->_hit <= 0 && this->_energy != 0)
     {
-        std::cout << this->_name << " should be repair!!" << std::endl;;
+        std::cout << "it's seems " << this->_name << " not working anymore :(" << std::endl;
         return;
     }
     if (this->_energy == 0)
@@ -60,9 +59,9 @@ void    ClapTrap::takeDamage(unsigned int amount)
 
 void    ClapTrap::beRepaired(unsigned int amount)
 {
-    if (this->_hit == 0)
+    if (this->_hit <= 0)
     {
-        std::cout << "it's seems not working anymore :(" << std::endl;
+        std::cout << "it's seems " << this->_name << " not working anymore :(" << std::endl;
         return;
     }
     if (this->_energy == 0)
@@ -74,9 +73,4 @@ void    ClapTrap::beRepaired(unsigned int amount)
     std::cout << this->_name << " is repaired!!" << std::endl;
     this->_energy--;
     this->_hit += amount;
-}
-
-void    ClapTrap::setDamage(unsigned int amount)
-{
-    this->_damage = amount;
 }

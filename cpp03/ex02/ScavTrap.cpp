@@ -47,7 +47,7 @@ void    ScavTrap::guardGate() const
 
 void    ScavTrap::attack(const std::string& target)
 {
-    if (this->_hit == 0 && this->_energy != 0)
+    if (this->_hit <= 0 && this->_energy != 0)
     {
         std::cout << this->_name << " should be repair!!" << std::endl;;
         return;
