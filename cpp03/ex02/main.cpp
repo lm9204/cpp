@@ -8,11 +8,14 @@ int main(void)
     ScavTrap scav;
     ClapTrap jack("jack");
     ScavTrap matt("matt");
-    FragTrap f("frog");
+    FragTrap frog("frog");
 
     matt.attack("jack");
     jack.takeDamage(11);
     jack.beRepaired(10);
     scav.guardGate();
-    f.attack("someone");
+    frog.attack("someone");
+    frog.highFivesGuys();
+    frog.takeDamage(50);
+    frog.beRepaired(50);
 }
