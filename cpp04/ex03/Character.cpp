@@ -43,7 +43,7 @@ std::string const &	Character::getName() const
 
 void	Character::equip(AMateria* m)
 {
-	if (_inventory[_idx] != NULL)
+	if (_idx < 4 && _inventory[_idx] != NULL)
 		return;
 	_inventory[_idx++] = m;
 }
