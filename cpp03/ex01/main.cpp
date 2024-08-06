@@ -3,13 +3,21 @@
 
 int main(void)
 {
-    ClapTrap jason("jason");
+    ClapTrap jason("Jason");
     ScavTrap scav;
-    ClapTrap jack("jack");
-    ScavTrap matt("matt");
+    ScavTrap jack("Jack");
 
-    matt.attack("jack");
-    jack.takeDamage(11);
-    jack.beRepaired(10);
+    jason.attack("Someone");
+    jason.takeDamage(2);
+    scav.attack("Jason");
+    jack.attack("scav");
     scav.guardGate();
+    scav.takeDamage(10);
+    scav.attack("Jason");
+    scav.beRepaired(10);
+    scav.takeDamage(101);
+    scav.takeDamage(11);
+    scav.attack("Jason");
+    scav.beRepaired(100);
+    jack.guardGate();
 }

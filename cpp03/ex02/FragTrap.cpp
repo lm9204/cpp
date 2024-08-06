@@ -3,6 +3,7 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
+	this->_name = "FragTrap";
 	this->_hit = this->_base_hit;
 	this->_energy = this->_base_energy;
 	this->_damage = this->_base_damage;

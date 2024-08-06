@@ -3,6 +3,7 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
+    this->_name = "ScavTrap";
     this->_hit = this->_base_hit;
     this->_energy = this->_base_energy;
     this->_damage = this->_base_damage;
@@ -42,19 +43,19 @@ ScavTrap&   ScavTrap::operator=(const ScavTrap& ref)
 
 void    ScavTrap::guardGate() const
 {
-    std::cout << this->_name << " is now in GateKeeper mode!" << std::endl;
+    std::cout << "ScavTrap " << this->_name << " is now on GateKeeper mode!" << std::endl;
 }
 
 void    ScavTrap::attack(const std::string& target)
 {
-    if (this->_hit <= 0 && this->_energy != 0)
+    if (this->_hit == 0 && this->_energy != 0)
     {
-        std::cout << this->_name << " should be repair!!" << std::endl;;
+        std::cout << "ScavTrap "<< this->_name << " seems not working anymore :(" << std::endl;
         return;
     }
     if (this->_energy == 0)
     {
-        std::cout << this->_name << " hasn't enough Energy!!!" << std::endl;
+        std::cout << "ScavTrap " << this->_name << " hasn't enough Energy!!!" << std::endl;
         return;
     }
 
