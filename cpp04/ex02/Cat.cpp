@@ -4,12 +4,14 @@
 Cat::Cat()
 { 
     this->_type = "Cat";
+    this->_brain = new Brain();
     std::cout << "Cat Constructor is called" << std::endl;
 }
 
 Cat::~Cat()
 {
     std::cout << "Cat Destructor is called" << std::endl;
+    delete this->_brain;
 }
 
 Cat::Cat(const Cat& ref) : Animal(ref)
@@ -31,14 +33,4 @@ Cat&    Cat::operator=(const Cat& ref)
 void    Cat::makeSound() const
 {
     std::cout << "Meow" << std::endl;
-}
-
-Brain&  Cat::getBrain() const
-{
-    return *this->_brain;
-}
-
-void    Cat::setBrain(Brain* brain)
-{
-    this->_brain = brain;
 }

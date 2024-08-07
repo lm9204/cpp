@@ -34,13 +34,3 @@ void    Dog::makeSound() const
 {
     std::cout << "Bark" << std::endl;
 }
-
-Brain&  Dog::getBrain() const
-{
-    return *this->_brain;
-}
-
-void    Dog::setBrain(Brain* brain)
-{
-    this->_brain = brain;
-}

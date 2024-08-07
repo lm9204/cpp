@@ -30,20 +30,3 @@ Brain&	Brain::operator=(const Brain& ref)
 	std::cout << "Brain Assignment operator is called" << std::endl;
 	return *this;
 }
-
-void	Brain::showIdeas() const
-{
-	std::cout << "[ Brain Ideas ]" << std::endl;
-	for (int i = 0; i < 100; i++)
-	{
-		std::cout << i << ": " <<  this->ideas[i] << std::endl;
-	}
-}
-
-void	Brain::setBrain(std::string* newIdeas)
-{
-	for (int i = 0; i < 100; ++i)
-	{
-		this->ideas[i] = newIdeas[i];
-	}
-}

@@ -1,5 +1,5 @@
 CC = c++
-FLAGS = -Wall -Wextra -Werror -MMD -MP -Wshadow -g3 -std=c++98
+FLAGS = -Wall -Wextra -Werror -MMD -MP -g3 -std=c++98
 SRCS = 	Animal.cpp	\
 		Dog.cpp		\
 		Cat.cpp		\
