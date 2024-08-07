@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Character.hpp>
+#include "Character.hpp"
 
 Character::Character() : _name("someone"), _idx(0)
 {
@@ -22,7 +22,8 @@ Character::Character(const Character& ref)
 
 Character::~Character()
 {
-
+	for (int i = 0; i < _idx; ++i)
+		delete _inventory[i];
 }
 
 Character&	Character::operator=(const Character& ref)
@@ -57,7 +58,7 @@ void	Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter& target)
 {
-	if (this->_inventory[idx] == NULL)
+	if (idx < 0 || idx > 4 || this->_inventory[idx] == NULL)
 		return;
 	this->_inventory[idx]->use(target);
 }

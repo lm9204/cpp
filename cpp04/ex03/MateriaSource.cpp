@@ -1,3 +1,4 @@
+#include <iostream>
 #include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource()
@@ -13,7 +14,8 @@ MateriaSource::MateriaSource(const MateriaSource& ref)
 
 MateriaSource::~MateriaSource()
 {
-
+	for (int i = 0; i < 4 && this->_m[i] != 0; ++i)
+		delete this->_m[i];
 }
 
 MateriaSource&	MateriaSource::operator=(const MateriaSource& ref)
@@ -32,10 +34,12 @@ void	MateriaSource::learnMateria(AMateria* materia)
 	{
 		if (!this->_m[i])
 		{
-			this->_m[i] = materia->clone();
+			this->_m[i] = materia;
 			return ;
 		}
 	}
+	delete materia;
+	std::cout << "No Slot left\n";
 }
 
 AMateria*	MateriaSource::createMateria(std::string const & type)

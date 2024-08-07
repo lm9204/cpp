@@ -2,32 +2,23 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-
 int main()
 {
-    Cat*    cat1 = new Cat();
-    Cat*    cat2 = new Cat();
-    Dog*    dog1 = new Dog();
-    Dog*    dog2 = new Dog();
-    Brain*  brain = new Brain();
-    std::string* ideas = new std::string[100];
+    Animal* animals[50];
 
-    ideas[0] = "cat";
-    ideas[1] = "meow";
-    ideas[2] = "catnip";
-    ideas[3] = "meow";
-    ideas[4] = "ha...";
-    brain->setBrain(ideas);
-    cat1->setBrain(brain);
-    cat1->getBrain().showIdeas();
+    for (int i = 0; i < 50; ++i)
+    {
+        if (i % 2 == 0)
+            animals[i] = new Cat();
+        else
+            animals[i] = new Dog();
+    }
 
-    delete cat1;
-    delete cat2;
-    delete dog1;
-    delete dog2;
-    delete brain;
-    delete[] ideas;
+    for (int i = 0; i < 50; ++i)
+        animals[i]->makeSound();
 
+    for (int i = 0; i < 50; ++i)
+        delete animals[i];
 
     return 0;
 }

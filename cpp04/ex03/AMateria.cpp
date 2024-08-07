@@ -15,6 +15,8 @@ AMateria::AMateria(const AMateria& ref)
 	this->_type = ref._type;
 }
 
+AMateria::~AMateria() {}
+
 AMateria&	AMateria::operator=(const AMateria& ref)
 {
 	if (this == &ref)
@@ -28,3 +30,4 @@ std::string	const & AMateria::getType() const
 {
 	return this->_type;
 }
+
