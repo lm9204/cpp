@@ -4,7 +4,7 @@
 # include <iostream>
 # include "Bureaucrat.hpp"
 
-class Bureaucant;
+class Bureaucrat;
 
 class Form
 {
@@ -22,11 +22,12 @@ class Form
 			};
 
 		Form();
+		Form(std::string name, int signGrade, int executeGrade);
 		Form(const Form& ref);
 		~Form();
 		Form&	operator=(const Form& ref);
 
-		void	beSigned(const Bureaucant& bureaucant);
+		void	beSigned(const Bureaucrat& bureaucrat);
 		const std::string getName() const;
 		int 	getRequiredSignGrade() const;
 		int 	getRequiredExecGrade() const;

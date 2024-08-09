@@ -1,9 +1,8 @@
-
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 # include <iostream>
 # include <string>
-# include "Form.hpp"
+# include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -25,7 +24,7 @@ class Bureaucrat
 		~Bureaucrat();
 		Bureaucrat&	operator=(const Bureaucrat& ref);
 
-		void	signForm(Form& form) const;
+		void	signForm(AForm& form) const;
 		const std::string	getName() const;
 		int					getGrade() const;
 		void				increment();
