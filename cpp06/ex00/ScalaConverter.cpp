@@ -24,7 +24,7 @@ void	ScalarConverter::convert(const std::string& input)
 	try
 	{
 		
-		char *ptr = nullptr;
+		char *ptr = NULL;
 		val = std::strtod(input.c_str(), &ptr);
 		if (!isNan(input) && !isInf(input))
 		{

@@ -1,14 +1,9 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -MMD -MP -g3 -std=c++98
-SRCS = 	Bureaucrat.cpp \
-		Intern.cpp \
-		AForm.cpp \
-		PresidentialPardonForm.cpp \
-		RobotomyRequestForm.cpp \
-		ShrubberyCreationForm.cpp \
-		main.cpp
+SRCS = 	main.cpp
+
 OBJS = $(SRCS:.cpp=.o)
-NAME = ex03
+NAME = template
 
 all : $(NAME)
 
@@ -26,5 +21,7 @@ fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
+
+-include $(SRCS:.cpp=.d)
 
 .PHONY: all clean re fclean

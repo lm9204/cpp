@@ -1,14 +1,10 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -MMD -MP -g3 -std=c++98
-SRCS = 	Bureaucrat.cpp \
-		Intern.cpp \
-		AForm.cpp \
-		PresidentialPardonForm.cpp \
-		RobotomyRequestForm.cpp \
-		ShrubberyCreationForm.cpp \
-		main.cpp
+SRCS = 	main.cpp \
+		Base.cpp
+
 OBJS = $(SRCS:.cpp=.o)
-NAME = ex03
+NAME = type
 
 all : $(NAME)
 

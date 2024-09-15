@@ -5,6 +5,8 @@ Data::Data()
 
 }
 
+Data::Data(std::string name) : _name(name) {}
+
 Data::Data(const Data& ref)
 {
 	*this = ref;

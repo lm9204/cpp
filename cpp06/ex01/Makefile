@@ -1,9 +1,11 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -MMD -MP -g3 -std=c++98
-SRCS = 	
+SRCS = 	Data.cpp \
+		Serializer.cpp \
+		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
-NAME = convert
+NAME = serialize
 
 all : $(NAME)
 

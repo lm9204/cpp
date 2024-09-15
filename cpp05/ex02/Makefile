@@ -1,7 +1,10 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -MMD -MP -g3 -std=c++98
 SRCS = 	Bureaucrat.cpp \
-		Form.cpp \
+		AForm.cpp \
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
+		ShrubberyCreationForm.cpp \
 		main.cpp
 OBJS = $(SRCS:.cpp=.o)
 NAME = ex02

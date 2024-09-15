@@ -6,6 +6,7 @@ class Data
 {
 	public:
 		Data();
+		Data(std::string name);
 		Data(const Data& ref);
 		Data&	operator=(const Data& ref);
 		~Data();
