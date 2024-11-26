@@ -9,8 +9,10 @@ class RPN
 		RPN(std::string arg);
 		~RPN();
 
-		int checkSymbol(std::string element);
-		int	isSymbol(std::string element);
+		int		checkSymbol(std::string element);
+		int		isSymbol(std::string element);
+		void	checkOverflow(int a, int b, const std::string &operation);
+		void	checkUnderflow(int a, int b, const std::string &operation);
 		void	run();
 
 	private:

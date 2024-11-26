@@ -10,7 +10,7 @@ int main(int argc, char** argv)
 
 	try
 	{
-		BitcoinExchange btc = BitcoinExchange(static_cast<std::string>(argv[1]));
+		BitcoinExchange btc(static_cast<std::string>(argv[1]));
 	}
 	catch(const std::exception& e)
 	{

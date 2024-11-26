@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 		ford.printDeque();
 		std::cout << "Sort Vector Time["<< ford.getSize() <<"]: " << (vec_end.tv_sec - vec_start.tv_sec) * 1000000 + vec_end.tv_usec - vec_start.tv_usec << " us\n";
 		std::cout << "Sort Deque Time["<< ford.getSize() <<"]: " << (deque_end.tv_sec - deque_start.tv_sec) * 1000000 + deque_end.tv_usec - deque_start.tv_usec << " us\n";
-		std::cout << "Total Comparison:" << ford.getComparison() << "\n";
+		std::cout << "Total Comparison: " << ford.getComparison() << "\n";
 	}
 	catch(const std::exception& e)
 	{

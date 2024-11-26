@@ -32,6 +32,8 @@ void	PmergeMe::insert(char** data)
 			ss >> n;
 			if (ss.fail())
 				throw std::invalid_argument("Error. Invalid Argument Type");
+			if (n < 0)
+				throw std::invalid_argument("Error. Only positive numbers are allowed");
 			_vec.push_back(n);
 			_deque.push_back(n);
 		}

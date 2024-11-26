@@ -56,7 +56,6 @@ void	BitcoinExchange::validInput(std::ifstream& input)
 		{
 			std::cout << "Error: bad input => " << date << "\n"; continue;
 		}
-			// throw std::invalid_argument("Invalid Input format");
 
 		// 날짜와 환율 유효성 확인
 		if (date.size() != 11 || date[4] != '-' || date[7] != '-')
@@ -65,7 +64,6 @@ void	BitcoinExchange::validInput(std::ifstream& input)
 		}
 
 		date.erase(10);
-			// throw std::invalid_argument("Invalid Input format"); // 날짜 형식이 YYYY-MM-DD가 아닌 경우
 
 		int year, month, day;
 		char dash1, dash2;
@@ -79,7 +77,6 @@ void	BitcoinExchange::validInput(std::ifstream& input)
 		{
 			std::cout << "Error: bad input => " << date << "\n"; continue;
 		}
-			// throw std::invalid_argument("Invalid Input format");
 
 		if (!isValidDate(year, month, day))
 		{
@@ -90,8 +87,16 @@ void	BitcoinExchange::validInput(std::ifstream& input)
 		{
 			std::cout << "Error: bad input => " << rate << "\n"; continue;
 		}
+		// data에 존재하는 날짜 중 제일 과거인 날짜보다 이전인지 확인
+		if (date < _data.begin()->first)
+		{
+			std::cout << "Error: bad input => " << date << "\n"; continue;
+		}
+		if (std::stoi(rate) < 0 || 1000 < std::stoi(rate))
+		{
+			std::cout << "Error: bad input => " << rate << "\n"; continue;
+		}
 
-		// std::cout << "\tdate:" << date << "\n\tfoundDate: " << findData(date) << "\n";
 		std::cout << date << " =>" << rate << " = " << strtod(rate.c_str(), NULL) * findData(date) << "\n";
 	}
 	if (isFirstLine)
@@ -110,7 +115,7 @@ double		BitcoinExchange::findData(std::string date)
 		if (it != _data.begin() && it->first > date)
 			return (--it)->second;
 	}
-	return (0);
+	return (-1);
 }
 
 int		BitcoinExchange::validData(std::ifstream& file)
@@ -194,8 +199,8 @@ int BitcoinExchange::isValidExchangeRate(const std::string& rate) {
 
 	// 소수점 자릿수 확인
 	size_t dotPos = rate.find('.');
-	if (dotPos != std::string::npos) 
-		if (rate.size() - dotPos - 1 > 2)  // 소수점 뒤 자릿수가 2보다 큰 경우
+	if (dotPos != std::string::npos && rate.size() - dotPos < 1) 
+		// if (rate.size() - dotPos - 1 > 2)  // 소수점 뒤 자릿수가 2보다 큰 경우
 			return (0);
 	return (1);
 }
