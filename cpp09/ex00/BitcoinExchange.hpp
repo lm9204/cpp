@@ -7,13 +7,16 @@
 class BitcoinExchange
 {
 	public:
-		BitcoinExchange(std::string filepath);
+		BitcoinExchange(const std::string& filepath);
 		~BitcoinExchange();
 
-		int		validData(std::ifstream& file);
+		int		validateData(std::ifstream& file);
+		int		validateInputDate(std::string& date);
 		int		isValidDate(int year, int date, int day);
-		int		isValidExchangeRate(const std::string& rate);
-		void	validInput(std::ifstream& input);
+		int		isValidDataExchangeRate(const std::string& rate);
+		int		isValidInputExchangeRate(const std::string& rate);
+		int		hasNonWhitespace(std::istringstream& iss);
+		void	validateInput(std::ifstream& input);
 		double	findData(std::string date);
 
 	private:

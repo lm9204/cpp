@@ -95,9 +95,7 @@ PmergeMe::_sortVec_recursive(std::vector<std::pair<int,int> > &vec)
 		return vec;
 
 	int mid = n / 2;
-	std::vector<std::pair<int, int> > mainC, subC, idxC, nMainC;
-	for (size_t i = 0; i < vec.size(); ++i)
-		idxC.push_back(std::make_pair(vec[i].first, i));
+	std::vector<std::pair<int, int> > mainC, subC, nMainC;
 
 	// 두 명씩 짝을 지어 비교하여 큰 값(메인 체인)과 작은 값(서브 체인)을 함께 관리
 	for (int i = 0; i < mid; ++i)
@@ -129,9 +127,7 @@ PmergeMe::_sortDeque_recursive(std::deque<std::pair<int,int> > &deque)
 		return deque;
 
 	int mid = n / 2;
-	std::deque<std::pair<int, int> > mainC, subC, idxC, nMainC;
-	for (size_t i = 0; i < deque.size(); ++i)
-		idxC.push_back(std::make_pair(deque[i].first, i));
+	std::deque<std::pair<int, int> > mainC, subC, nMainC;
 
 	// 두 명씩 짝을 지어 비교하여 큰 값(메인 체인)과 작은 값(서브 체인)을 함께 관리
 	for (int i = 0; i < mid; ++i)
@@ -158,14 +154,14 @@ PmergeMe::_sortDeque_recursive(std::deque<std::pair<int,int> > &deque)
 std::vector<std::pair<int, int> >
 PmergeMe::_merge(std::vector<std::pair<int, int> > &main, std::vector<std::pair<int, int> > &sub)
 {
-	if (sub.size() > 0)
+	size_t prevCountIdx = 1, currIdx = 2, prevComparisonCount = 2, insertCount = 1, len = sub.size();
+	if (len > 0)
 		main.insert(main.begin(), sub[0]);
 
-	size_t prevCountIdx = 1, currIdx = 2, prevComparisonCount = 2, insertCount = 1;
-	for (size_t i = 0; i < sub.size(); ++i)
+	for (size_t i = 0; i < len; ++i)
 	{
-		if (currIdx >= sub.size())
-			currIdx = sub.size() - 1;
+		if (currIdx >= len)
+			currIdx = len - 1;
 		for (size_t j = currIdx; j >= prevCountIdx; --j)
 		{
 			_insert(main, sub[j], j + insertCount);
@@ -181,14 +177,14 @@ PmergeMe::_merge(std::vector<std::pair<int, int> > &main, std::vector<std::pair<
 std::deque<std::pair<int, int> >
 PmergeMe::_merge(std::deque<std::pair<int, int> > &main, std::deque<std::pair<int, int> > &sub)
 {
-	if (sub.size() > 0)
+	size_t prevCountIdx = 1, currIdx = 2, prevComparisonCount = 2, insertCount = 1, len = sub.size();
+	if (len > 0)
 		main.insert(main.begin(), sub[0]);
 
-	size_t prevCountIdx = 1, currIdx = 2, prevComparisonCount = 2, insertCount = 1;
-	for (size_t i = 0; i < sub.size(); ++i)
+	for (size_t i = 0; i < len; ++i)
 	{
-		if (currIdx >= sub.size())
-			currIdx = sub.size() - 1;
+		if (currIdx >= len)
+			currIdx = len - 1;
 		for (size_t j = currIdx; j >= prevCountIdx; --j)
 		{
 			_insert(main, sub[j], j + insertCount);
